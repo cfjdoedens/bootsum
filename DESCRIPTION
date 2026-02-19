@@ -1,0 +1,25 @@
+Package: bootsum
+Type: Package
+Title: Schat omvang in geld van massa aan de hand van een postensteekproef
+Version: 0.1.2
+Authors@R: c(
+    person(
+      "Crist-Jan", "Doedens",
+      email = "cjd@chance-matters.nl",
+      role = c("aut", "cre")
+    )
+  )
+Description: Schat omvang van een geldmassa aan de hand van een postensteekproef
+    uit deze massa. Schatting is gebaseerd op bootstrapping, BCA-methode.
+    Deze methode is dus non-parametrisch, en gebruikt geen aannames over 
+    de kansverdeling, zoals normaliteit.
+License: MIT + file LICENSE
+Encoding: UTF-8
+RoxygenNote: 7.3.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+URL: https://github.com/cfjdoedens/drawsneeded, https://cfjdoedens.github.io/drawsneeded/
+BugReports: https://github.com/cfjdoedens/drawsneeded/issues
+Imports:
+    boot

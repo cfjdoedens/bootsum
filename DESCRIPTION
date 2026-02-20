@@ -19,7 +19,7 @@ RoxygenNote: 7.3.3
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-URL: https://github.com/cfjdoedens/drawsneeded, https://cfjdoedens.github.io/drawsneeded/
+URL: https://github.com/cfjdoedens/drawsneeded, https://cfjdoedens.github.io/drawsneeded/, https://cfjdoedens.github.io/bootsum/
 BugReports: https://github.com/cfjdoedens/drawsneeded/issues
 Imports:
     boot

@@ -53,10 +53,10 @@ Daarnaast zijn er twee optionele argumenten:
 ### Voorbeeldgebruik
 
 Hier is een voorbeeld van hoe je de functie in de praktijk gebruikt bij
-de controle van een populatie facturen.
+de controle van een populatie verplichtingen.
 
 ``` r
-# Fictieve steekproef van 15 gecontroleerde posten (bijv. factuurwaarden in euro's)
+# Fictieve steekproef van 15 gecontroleerde posten (bijv. waarde van verplichtingen in euro's)
 steekproef <- c(120.50, 305.00, 45.20, 99.99, 1050.00, 
                 23.45, 88.00, 500.00, 210.00, 340.00, 
                 75.00, 115.00, 890.00, 42.10, 310.00)

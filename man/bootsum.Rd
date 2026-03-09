@@ -11,14 +11,14 @@ bootsum(v, N, certainty = 0.95, b = 1e+05)
 
 \item{N}{Integer. Het totale aantal posten in de massa (populatie) waaruit getrokken is.}
 
-\item{certainty}{Numeric. Het betrouwbaarheidsniveau (standaard: 0.95).}
+\item{certainty}{Numeric. Het zekerheidspercentage voor de minimum- en maximumgrens (standaard: 0.95).}
 
 \item{b}{Integer. Het aantal bootstrap iteraties (standaard: 100.000).}
 }
 \value{
-Een lijst met de geobserveerde schatting, tweezijdige grenzen en eenzijdige grenzen (invisibly).
+Een lijst met de geobserveerde schatting, en de minimum- en maximumgrens (invisibly).
 }
 \description{
-Berekent en visualiseert BCa betrouwbaarheidsintervallen (tweezijdig en eenzijdig)
-voor de totale populatiewaarde op basis van een steekproef, met behulp van bootstrapping.
+Berekent en visualiseert BCa betrouwbaarheidsintervallen voor de totale
+populatiewaarde op basis van een steekproef, met behulp van bootstrapping.
 }

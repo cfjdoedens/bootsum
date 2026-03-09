@@ -5,14 +5,14 @@
 #'
 #' @param v Een numerieke vector van positieve waarden (de getrokken steekproef).
 #' @param N Integer. Het totale aantal posten in de massa (populatie) waaruit getrokken is.
-#' @param certainty Numeric. Het zekerheidspercentage voor de minimum- en maximumgrens (standaard: 0.95).
+#' @param zekerheid Numeric. Het zekerheidspercentage voor de minimum- en maximumgrens (standaard: 0.95).
 #' @param b Integer. Het aantal bootstrap iteraties (standaard: 100.000).
 #'
 #' @return Een lijst met de geobserveerde schatting, en de minimum- en maximumgrens (invisibly).
 #' @importFrom boot boot boot.ci
 #' @importFrom graphics hist abline legend axis par
 #' @export
-bootsum <- function(v, N, certainty = 0.95, b = 100000) {
+bootsum <- function(v, N, zekerheid = 0.95, b = 100000) {
 
   # 1. Validatie
   if (!is.numeric(v) || any(v <= 0)) {
@@ -45,9 +45,9 @@ bootsum <- function(v, N, certainty = 0.95, b = 100000) {
   boot_result <- boot::boot(data = v, statistic = sum_fn, R = b)
   boot_ests <- as.vector(boot_result$t)
 
-  # 4. Bereken BCa Grenzen (Ieder met 'certainty' zekerheid)
+  # 4. Bereken BCa Grenzen (Ieder met 'zekerheid' zekerheid)
   #    Wiskundig knippen we aan beide kanten de juiste foutmarge af.
-  alpha <- 1 - certainty
+  alpha <- 1 - zekerheid
   conf_proxy <- 1 - (2 * alpha)
 
   ci_obj <- tryCatch({
@@ -60,7 +60,7 @@ bootsum <- function(v, N, certainty = 0.95, b = 100000) {
   pct_val <- (bounds / obs_est) * 100
 
   # 6. Maak Dynamische Titel
-  conf_pct_str <- fmt_pct(certainty * 100)
+  conf_pct_str <- fmt_pct(zekerheid * 100)
 
   plot_title <- sprintf(
     "Bootstrap Geschatte Totale Waarde (BCa)\nSchatting: %s\nMinimum en maximum (ieder met %s%% zekerheid):\nMin %s (%s%%)  |  Max %s (%s%%)",

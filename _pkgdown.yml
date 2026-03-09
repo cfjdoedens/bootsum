@@ -2,3 +2,11 @@ url: https://cfjdoedens.github.io/bootsum/
 template:
   bootstrap: 5
 
+navbar:
+  structure:
+    right: [app, github]
+  components:
+    app:
+      icon: fas fa-rocket
+      text: " Live App"
+      href: https://cfjdoedens.shinyapps.io/bootsum-evaluatie/

@@ -7,3 +7,5 @@
   posten
 - [`hello()`](https://cfjdoedens.github.io/bootsum/reference/hello.md) :
   Hello, World!
+- [`run_bootsum_app()`](https://cfjdoedens.github.io/bootsum/reference/run_bootsum_app.md)
+  : Start de Bootsum Shiny Applicatie

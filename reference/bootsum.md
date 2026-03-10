@@ -7,7 +7,7 @@ bootstrapping.
 ## Usage
 
 ``` r
-bootsum(v, N, certainty = 0.95, b = 1e+05)
+bootsum(v, N, zekerheid = 0.95, b = 1e+05)
 ```
 
 ## Arguments
@@ -21,7 +21,7 @@ bootsum(v, N, certainty = 0.95, b = 1e+05)
   Integer. Het totale aantal posten in de massa (populatie) waaruit
   getrokken is.
 
-- certainty:
+- zekerheid:
 
   Numeric. Het zekerheidspercentage voor de minimum- en maximumgrens
   (standaard: 0.95).

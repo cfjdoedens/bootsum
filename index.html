@@ -76,7 +76,7 @@
 </ul>
 <p>Daarnaast zijn er twee optionele argumenten:</p>
 <ul>
-<li>certainty: Het gewenste zekerheidspercentage voor de minimum- en maximumgrens (standaard 0,95, oftewel 95%).</li>
+<li>zekerheid: Het gewenste zekerheidspercentage voor de minimum- en maximumgrens (standaard 0,95, oftewel 95%).</li>
 <li>b: Het aantal bootstrap-iteraties (standaard 100000). Voor snelle tests kun je dit verlagen, maar voor definitieve rapportages wordt de standaardwaarde aanbevolen.</li>
 </ul>
 </div>
@@ -98,7 +98,7 @@
 <span><span class="co"># zodat het bouwen van de documentatie snel gaat. </span></span>
 <span><span class="co"># Voor een echte audit gebruik je idealiter de standaard (b = 100000).</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span> <span class="co"># Seed instellen voor een reproduceerbare plot in deze README</span></span>
-<span><span class="va">resultaat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/bootsum.html">bootsum</a></span><span class="op">(</span>v <span class="op">=</span> <span class="va">steekproef</span>, N <span class="op">=</span> <span class="va">populatie_grootte</span>, certainty <span class="op">=</span> <span class="fl">0.95</span>, b <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">resultaat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/bootsum.html">bootsum</a></span><span class="op">(</span>v <span class="op">=</span> <span class="va">steekproef</span>, N <span class="op">=</span> <span class="va">populatie_grootte</span>, zekerheid <span class="op">=</span> <span class="fl">0.95</span>, b <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" alt="" width="100%"> Naast de overzichtelijke visualisatie, retourneert de functie op de achtergrond een lijst met de exacte wiskundige grenzen. Deze kun je opvragen door het resultaat te printen:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Bekijk de exacte berekende waarden</span></span>
@@ -129,7 +129,7 @@
 <span><span class="va">steekproef_simulatie</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">volledige_populatie</span>, size <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># 3. Laat bootsum de massa schatten (b = 5000 voor snelheid)</span></span>
-<span><span class="va">resultaat_simulatie</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/bootsum.html">bootsum</a></span><span class="op">(</span>v <span class="op">=</span> <span class="va">steekproef_simulatie</span>, N <span class="op">=</span> <span class="fl">10000</span>, certainty <span class="op">=</span> <span class="fl">0.95</span>, b <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">resultaat_simulatie</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/bootsum.html">bootsum</a></span><span class="op">(</span>v <span class="op">=</span> <span class="va">steekproef_simulatie</span>, N <span class="op">=</span> <span class="fl">10000</span>, zekerheid <span class="op">=</span> <span class="fl">0.95</span>, b <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-exampletoets-1.png" alt="" width="100%"></p>
 </div>
 </div>

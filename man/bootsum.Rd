@@ -4,14 +4,14 @@
 \alias{bootsum}
 \title{Visualisatie van de geschatte totale waarde van een massa financiële posten}
 \usage{
-bootsum(v, N, certainty = 0.95, b = 1e+05)
+bootsum(v, N, zekerheid = 0.95, b = 1e+05)
 }
 \arguments{
 \item{v}{Een numerieke vector van positieve waarden (de getrokken steekproef).}
 
 \item{N}{Integer. Het totale aantal posten in de massa (populatie) waaruit getrokken is.}
 
-\item{certainty}{Numeric. Het zekerheidspercentage voor de minimum- en maximumgrens (standaard: 0.95).}
+\item{zekerheid}{Numeric. Het zekerheidspercentage voor de minimum- en maximumgrens (standaard: 0.95).}
 
 \item{b}{Integer. Het aantal bootstrap iteraties (standaard: 100.000).}
 }

@@ -7,7 +7,7 @@ ui <- fluidPage(
 
     sidebarLayout(
         sidebarPanel(
-            helpText("Upload een CSV-bestand met je steekproef. De app gaat ervan uit dat de bedragen in de eerste kolom staan."),
+            helpText("Upload een CSV-bestand met je steekproef. De app gaat ervan uit dat IST-bedragen in de eerste kolom staan."),
 
             fileInput("file_input", "Upload CSV-bestand:",
                       accept = c("text/csv", "text/comma-separated-values,text/plain", ".csv"),
@@ -22,12 +22,11 @@ ui <- fluidPage(
             numericInput("N_input", "Totaal aantal posten in de massa waaruit wordt gestoken (N):",
                          value = 1500, min = 1),
 
-            sliderInput("certainty", "Gewenste zekerheid:",
+            sliderInput("zekerheid", "Gewenste zekerheid:",
                         min = 0.80, max = 0.99, value = 0.95, step = 0.01),
 
-            # NIEUW: Invoerveld voor het aantal bootstrap iteraties (b)
             numericInput("b_input", "Aantal bootstrap iteraties (b):",
-                         value = 10000, min = 100, step = 1000),
+                         value = 100000, min = 100, step = 1000),
 
             actionButton("calc", "Bereken Grenzen", class = "btn-primary", width = "100%")
         ),
@@ -79,7 +78,7 @@ server <- function(input, output) {
         # NIEUW: Hier is de hardcoded 10000 vervangen door 'input$b_input'
         bootsum(v = v_data(),
                 N = input$N_input,
-                certainty = input$certainty,
+                zekerheid = input$zekerheid,
                 b = input$b_input)
     })
 }

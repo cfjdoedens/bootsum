@@ -45,7 +45,7 @@ De functie vereist minimaal de volgende twee argumenten:
 
 Daarnaast zijn er twee optionele argumenten:
 
-- certainty: Het gewenste zekerheidspercentage voor de minimum- en
+- zekerheid: Het gewenste zekerheidspercentage voor de minimum- en
   maximumgrens (standaard 0,95, oftewel 95%).
 - b: Het aantal bootstrap-iteraties (standaard 100000). Voor snelle
   tests kun je dit verlagen, maar voor definitieve rapportages wordt de
@@ -70,7 +70,7 @@ populatie_grootte <- 1500
 # zodat het bouwen van de documentatie snel gaat. 
 # Voor een echte audit gebruik je idealiter de standaard (b = 100000).
 set.seed(123) # Seed instellen voor een reproduceerbare plot in deze README
-resultaat <- bootsum(v = steekproef, N = populatie_grootte, certainty = 0.95, b = 5000)
+resultaat <- bootsum(v = steekproef, N = populatie_grootte, zekerheid = 0.95, b = 5000)
 ```
 
 <img src="man/figures/README-example-1.png" alt="" width="100%" /> Naast
@@ -115,7 +115,7 @@ echte_waarde <- sum(volledige_populatie)
 steekproef_simulatie <- sample(volledige_populatie, size = 50)
 
 # 3. Laat bootsum de massa schatten (b = 5000 voor snelheid)
-resultaat_simulatie <- bootsum(v = steekproef_simulatie, N = 10000, certainty = 0.95, b = 5000)
+resultaat_simulatie <- bootsum(v = steekproef_simulatie, N = 10000, zekerheid = 0.95, b = 5000)
 ```
 
 <img src="man/figures/README-exampletoets-1.png" alt="" width="100%" />

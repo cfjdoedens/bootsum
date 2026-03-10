@@ -7,7 +7,7 @@ ui <- fluidPage(
 
     sidebarLayout(
         sidebarPanel(
-            helpText("Upload een CSV-bestand met je steekproef. De app gaat ervan uit dat IST-bedragen in de eerste kolom staan."),
+            helpText("Upload een CSV-bestand met je steekproef. De app gaat ervan uit dat SOLL-bedragen (de juiste, eventueel gecorrigeerde, bedragen dus)in de eerste kolom staan."),
 
             fileInput("file_input", "Upload CSV-bestand:",
                       accept = c("text/csv", "text/comma-separated-values,text/plain", ".csv"),
